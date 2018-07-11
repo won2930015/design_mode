@@ -7,7 +7,7 @@
 """
 
 
-# Director 主管程序
+# Director 主管程序(指挥者)
 class Director(object):
     def __init__(self):
         self.builder = None
@@ -31,7 +31,7 @@ class Builder(object):
         self.building = Building()
 
 
-# Concrete Builder
+# Concrete Builder (具体 建造者)
 class BuilderHouse(Builder):
     def build_floor(self):
         self.building.floor = 'One'
@@ -39,7 +39,7 @@ class BuilderHouse(Builder):
     def build_size(self):
         self.building.size = 'Big'
 
-
+# Concrete Builder (具体 建造者)
 class BuilderFlat(Builder):
     def build_floor(self):
         self.building.floor = 'More than One'

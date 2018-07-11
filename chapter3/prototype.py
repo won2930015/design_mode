@@ -24,15 +24,15 @@ class Book:
         return ''.join(mylist)
 
 
-class Prototype:
+class Prototype:  # 原型类
 
     def __init__(self):
         self.objects = dict()
 
-    def register(self, identifier, obj):
+    def register(self, identifier, obj):  # identifier::标识字
         self.objects[identifier] = obj
 
-    def unregister(self, identifier):
+    def unregister(self, identifier):  # identifier::标识字
         del self.objects[identifier]
 
     def clone(self, identifier, **attr):
@@ -50,7 +50,7 @@ def main():
 
     prototype = Prototype()
     cid = 'k&r-first'
-    prototype.register(cid, b1)
+    prototype.register(cid, b1)  # 注册b1对象.
     b2 = prototype.clone(cid, name='The C Programming Language(ANSI)', price=48.99,
                          length=274, publication_date='1988-04-01', edition=2)
 
