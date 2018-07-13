@@ -1,5 +1,7 @@
 # coding: utf-8
 
+
+# 装饰器模式
 import functools
 
 
@@ -25,7 +27,8 @@ def nsum(n):
 @memoize
 def fibonacci(n):
     '''返回斐波那契数列的第n个数'''
-    assert(n >= 0), 'n must be >= 0'
+    assert(n >= 0), 'n must be >= 0'  # todo::assert expression1 [, expression2]
+                                      # todo::expression1的值会返回Ture或者False，当值为False的时候会引发AssertionError，而expression2是可选的，常用来传递具体的异常信息。
     return n if n in (0, 1) else fibonacci(n-1) + fibonacci(n-2)
 
 if __name__ == '__main__':
