@@ -3,6 +3,7 @@
 from enum import Enum
 from abc import ABCMeta, abstractmethod
 
+# todo::https://www.cnblogs.com/ucos/p/5896861.html
 State = Enum('State', 'new running sleeping restart zombie')
 
 
