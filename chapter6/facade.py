@@ -1,7 +1,8 @@
 # coding: utf-8
+# 外观模式
 
 from enum import Enum
-from abc import ABCMeta, abstractmethod
+from abc import ABCMeta, abstractmethod  # todo::https://blog.csdn.net/grey_csdn/article/details/77110667
 
 # todo::https://www.cnblogs.com/ucos/p/5896861.html
 State = Enum('State', 'new running sleeping restart zombie')
@@ -91,7 +92,7 @@ class NetworkServer:
     pass
 
 
-class OperatingSystem:
+class OperatingSystem:  # 操作系统::面向用户
 
     '''外观'''
 

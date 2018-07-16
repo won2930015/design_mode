@@ -3,11 +3,11 @@
 import random
 from enum import Enum
 
-TreeType = Enum('TreeType', 'apple_tree cherry_tree peach_tree')
+TreeType = Enum('TreeType', 'apple_tree cherry_tree peach_tree')   # 三种树,萍果树 ,樱桃树 ,桃子树
 
 
 class Tree:
-    pool = dict()
+    pool = dict()  # pool::池
 
     def __new__(cls, tree_type):
         obj = cls.pool.get(tree_type, None)
