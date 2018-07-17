@@ -4,7 +4,7 @@ quotes = ('A man is not complete until he is married. Then he is finished.',
           'Black holes really suck...', 'Facts are stubborn things.')
 
 
-class QuoteModel:
+class QuoteModel:  # 模型
 
     def get_quote(self, n):
         try:
@@ -14,7 +14,7 @@ class QuoteModel:
         return value
 
 
-class QuoteTerminalView:
+class QuoteTerminalView:  # 视图
 
     def show(self, quote):
         print('And the quote is: "{}"'.format(quote))
@@ -26,7 +26,7 @@ class QuoteTerminalView:
         return input('Which quote number would you like to see?')
 
 
-class QuoteTerminalController:
+class QuoteTerminalController:  # 控制器
 
     def __init__(self):
         self.model = QuoteModel()
@@ -46,7 +46,7 @@ class QuoteTerminalController:
         self.view.show(quote)
 
 
-def main():
+def main():  # 调用主程序
     controller = QuoteTerminalController()
     while True:
         controller.run()
