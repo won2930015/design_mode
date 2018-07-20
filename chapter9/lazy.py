@@ -1,7 +1,7 @@
 # coding: utf-8
 
 
-class LazyProperty:
+class LazyProperty:  # 懒惰代理...
 
     def __init__(self, method):
         self.method = method
@@ -9,12 +9,12 @@ class LazyProperty:
         # print('function overriden: {}'.format(self.method))
         # print("function's name: {}".format(self.method_name))
 
-    def __get__(self, obj, cls):
+    def __get__(self, obj, cls):  # todo::https://www.cnblogs.com/saolv/p/6890645.html
         if not obj:
             return None
-        value = self.method(obj)
+        value = self.method(obj)  # 这里的obj应该当为self传入.
         # print('value {}'.format(value))
-        setattr(obj, self.method_name, value)
+        setattr(obj, self.method_name, value)  #obj:实例对象, self.method_name:属性, value:属性值
         return value
 
 
