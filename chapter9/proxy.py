@@ -1,7 +1,7 @@
 # coding: utf-8
 
 
-class SensitiveInfo:
+class SensitiveInfo:  # 敏感信息
 
     def __init__(self):
         self.users = ['nick', 'tom', 'ben', 'mike']
@@ -14,13 +14,13 @@ class SensitiveInfo:
         print('Added user {}'.format(user))
 
 
-class Info:
+class Info:  # 信息
 
     '''SensitiveInfo的保护代理'''
 
     def __init__(self):
         self.protected = SensitiveInfo()
-        self.secret = '0xdeadbeef'
+        self.secret = '0xdeadbeef'  #  secret::秘密
 
     def read(self):
         self.protected.read()

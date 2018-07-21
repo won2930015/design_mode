@@ -1,3 +1,4 @@
+#  命令模式
 import os
 
 verbose = True
@@ -53,7 +54,7 @@ def delete_file(path):
 
 
 def main():
-    orig_name = 'file1'
+    orig_name = 'file1'  # 原名
     df = delete_file
 
     commands = []
