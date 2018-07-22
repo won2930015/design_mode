@@ -3,7 +3,7 @@
 from pyparsing import Word, OneOrMore, Optional, Group, Suppress, alphanums
 
 
-class Gate:
+class Gate:  # 门
 
     def __init__(self):
         self.is_open = False
@@ -20,7 +20,7 @@ class Gate:
         self.is_open = False
 
 
-class Garage:
+class Garage:  # 车库
 
     def __init__(self):
         self.is_open = False
@@ -37,7 +37,7 @@ class Garage:
         self.is_open = False
 
 
-class Aircondition:
+class Aircondition:  # 空调
 
     def __init__(self):
         self.is_on = False
@@ -54,7 +54,7 @@ class Aircondition:
         self.is_on = False
 
 
-class Heating:
+class Heating:  # 暖气
 
     def __init__(self):
         self.is_on = False
@@ -71,7 +71,7 @@ class Heating:
         self.is_on = False
 
 
-class Boiler:
+class Boiler:  # 热水器
 
     def __init__(self):
         self.temperature = 83  # in celsius
@@ -79,16 +79,16 @@ class Boiler:
     def __str__(self):
         return 'boiler temperature: {}'.format(self.temperature)
 
-    def increase_temperature(self, amount):
+    def increase_temperature(self, amount):  # 增加温度
         print("increasing the boiler's temperature by {} degrees".format(amount))
         self.temperature += amount
 
-    def decrease_temperature(self, amount):
+    def decrease_temperature(self, amount):  # 减少温度
         print("decreasing the boiler's temperature by {} degrees".format(amount))
         self.temperature -= amount
 
 
-class Fridge:
+class Fridge:  # 冰箱
 
     def __init__(self):
         self.temperature = 2  # 单位为摄氏度
