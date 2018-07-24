@@ -71,7 +71,7 @@ class Heating:  # 暖气
         self.is_on = False
 
 
-class Boiler:  # 热水器
+class Boiler:  # 锅炉
 
     def __init__(self):
         self.temperature = 83  # in celsius
@@ -106,12 +106,12 @@ class Fridge:  # 冰箱
 
 
 def main():
-    word = Word(alphanums)
-    command = Group(OneOrMore(word))
-    token = Suppress("->")
-    device = Group(OneOrMore(word))
-    argument = Group(OneOrMore(word))
-    event = command + token + device + Optional(token + argument)
+    word = Word(alphanums)  # alphanums::字符数字混合.
+    command = Group(OneOrMore(word))  # command::命令
+    token = Suppress("->")  # token::记号(分隔符)
+    device = Group(OneOrMore(word))     # device::装置(接收器)
+    argument = Group(OneOrMore(word))   # argument::内容(参数)
+    event = command + token + device + Optional(token + argument)  # 完整命令格式
 
     gate = Gate()
     garage = Garage()
