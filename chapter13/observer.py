@@ -1,4 +1,4 @@
-class Publisher:
+class Publisher:  #  发布者
 
     def __init__(self):
         self.observers = []
@@ -19,7 +19,7 @@ class Publisher:
         [o.notify(self) for o in self.observers]
 
 
-class DefaultFormatter(Publisher):
+class DefaultFormatter(Publisher):  # 默认格式(具体发布者)
 
     def __init__(self, name):
         Publisher.__init__(self)
@@ -43,14 +43,14 @@ class DefaultFormatter(Publisher):
             self.notify()
 
 
-class HexFormatter:
+class HexFormatter:  # 16进制格式
 
     def notify(self, publisher):
         print("{}: '{}' has now hex data = {}".format(type(self).__name__,
                                                       publisher.name, hex(publisher.data)))
 
 
-class BinaryFormatter:
+class BinaryFormatter:  # 2进制格式
 
     def notify(self, publisher):
         print("{}: '{}' has now bin data = {}".format(type(self).__name__,
