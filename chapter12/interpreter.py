@@ -1,5 +1,8 @@
 # coding: utf-8
 
+
+# 关于 BNF范式 todo::http://baijiahao.baidu.com/s?id=1583973801559216516&wfr=spider&for=pc
+# 关于 pyprsing todo::https://www.jianshu.com/p/98305f30d198
 from pyparsing import Word, OneOrMore, Optional, Group, Suppress, alphanums
 
 

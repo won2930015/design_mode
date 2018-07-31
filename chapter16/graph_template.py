@@ -1,9 +1,9 @@
 # coding: utf-8
 
 
-def traverse(graph, start, end, action):
+def traverse(graph, start, end, action):  # 这是一个模版函数.
     path = []
-    visited = [start]
+    visited = [start]  # 已访问
     while visited:
         current = visited.pop(0)
         if current not in path:

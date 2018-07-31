@@ -4,7 +4,7 @@ BFS = 1
 DFS = 2
 
 
-def traverse(graph, start, end, algorithm):
+def traverse(graph, start, end, algorithm):  # 内置算法选项的 模版函数.
     path = []
     visited = [start]
     while visited:

@@ -7,7 +7,7 @@ class Process:
     created = State(initial=True)  # 创建
     waiting = State()  # 等待
     running = State()  # 运行
-    terminated = State()  #终止
+    terminated = State()  # 终止
     blocked = State()  # 阻塞
     swapped_out_waiting = State()  # 切换到等待
     swapped_out_blocked = State()  # 切换到阻塞

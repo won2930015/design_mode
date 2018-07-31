@@ -1,7 +1,7 @@
 # coding: utf-8
 
 
-def bfs(graph, start, end):
+def bfs(graph, start, end):  # 广度搜索算法.
     path = []
     visited = [start]
     while visited:
@@ -18,7 +18,7 @@ def bfs(graph, start, end):
     return (False, path)
 
 
-def dfs(graph, start, end):
+def dfs(graph, start, end):  # 深度搜索算法.
     path = []
     visited = [start]
     while visited:
