@@ -3,56 +3,60 @@
 from enum import Enum
 import time
 
+# 比萨进度:(比萨进度, 排队 预备 烘焙 准备)
 PizzaProgress = Enum('PizzaProgress', 'queued preparation baking ready')
+# 比萨面团:(比萨面团, 薄的 厚的)
 PizzaDough = Enum('PizzaDough', 'thin thick')
+# 比萨调料:(比萨调料, 番茄 酸奶油)
 PizzaSauce = Enum('PizzaSauce', 'tomato creme_fraiche')
+# 比萨装饰配料:(比萨装饰配料,马苏里拉奶酪 加倍_马苏里拉奶酪 烟肉 火腿 蘑菇 红_洋葱 牛至)
 PizzaTopping = Enum('PizzaTopping', 'mozzarella double_mozzarella bacon ham mushrooms red_onion oregano')
 STEP_DELAY = 3          # 考虑是示例，单位为秒
 
 
-class Pizza:
+class Pizza:  # 比萨
 
     def __init__(self, name):
         self.name = name
-        self.dough = None
-        self.sauce = None
-        self.topping = []
+        self.dough = None  # 面团
+        self.sauce = None  # 调料
+        self.topping = []  # 装饰配料
 
     def __str__(self):
         return self.name
 
-    def prepare_dough(self, dough):
+    def prepare_dough(self, dough):  # 预备面团
         self.dough = dough
         print('preparing the {} dough of your {}...'.format(self.dough.name, self))
         time.sleep(STEP_DELAY)
         print('done with the {} dough'.format(self.dough.name))
 
 
-class MargaritaBuilder:
+class MargaritaBuilder:  # 建造者(构造):玛格丽塔比萨
 
     def __init__(self):
         self.pizza = Pizza('margarita')
-        self.progress = PizzaProgress.queued
+        self.progress = PizzaProgress.queued  # progress::进度
         self.baking_time = 5        # 考虑是示例，单位为秒
 
-    def prepare_dough(self):
+    def prepare_dough(self):  # 预备面团
         self.progress = PizzaProgress.preparation
         self.pizza.prepare_dough(PizzaDough.thin)
 
-    def add_sauce(self):
+    def add_sauce(self):  # 加入调料
         print('adding the tomato sauce to your margarita...')
         self.pizza.sauce = PizzaSauce.tomato
         time.sleep(STEP_DELAY)
         print('done with the tomato sauce')
 
-    def add_topping(self):
+    def add_topping(self):  #加入装饰配料
         print('adding the topping (double mozzarella, oregano) to your margarita')
         self.pizza.topping.append([i for i in
                                    (PizzaTopping.double_mozzarella, PizzaTopping.oregano)])
         time.sleep(STEP_DELAY)
         print('done with the topping (double mozzarrella, oregano)')
 
-    def bake(self):
+    def bake(self):  # 烘焙
         self.progress = PizzaProgress.baking
         print('baking your margarita for {} seconds'.format(self.baking_time))
         time.sleep(self.baking_time)
@@ -60,24 +64,24 @@ class MargaritaBuilder:
         print('your margarita is ready')
 
 
-class CreamyBaconBuilder:
+class CreamyBaconBuilder:  # 建造者(构造):奶油烟肉比萨
 
     def __init__(self):
         self.pizza = Pizza('creamy bacon')
         self.progress = PizzaProgress.queued
         self.baking_time = 7        # 考虑是示例，单位为秒
 
-    def prepare_dough(self):
+    def prepare_dough(self):  # 预备面团
         self.progress = PizzaProgress.preparation
         self.pizza.prepare_dough(PizzaDough.thick)
 
-    def add_sauce(self):
+    def add_sauce(self):  # 加入调料
         print('adding the crème fraîche sauce to your creamy bacon')
         self.pizza.sauce = PizzaSauce.creme_fraiche
         time.sleep(STEP_DELAY)
         print('done with the crème fraîche sauce')
 
-    def add_topping(self):
+    def add_topping(self):  # 加入装饰配料
         print('adding the topping (mozzarella, bacon, ham, mushrooms, red onion, oregano) to your creamy bacon')
         self.pizza.topping.append([t for t in
                                    (PizzaTopping.mozzarella, PizzaTopping.bacon,
@@ -86,7 +90,7 @@ class CreamyBaconBuilder:
         time.sleep(STEP_DELAY)
         print('done with the topping (mozzarella, bacon, ham, mushrooms, red onion, oregano)')
 
-    def bake(self):
+    def bake(self):  # 烘焙
         self.progress = PizzaProgress.baking
         print('baking your creamy bacon for {} seconds'.format(self.baking_time))
         time.sleep(self.baking_time)
@@ -94,7 +98,7 @@ class CreamyBaconBuilder:
         print('your creamy bacon is ready')
 
 
-class Waiter:
+class Waiter:  #指挥者:报务员
 
     def __init__(self):
         self.builder = None

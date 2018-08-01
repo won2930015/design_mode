@@ -1,5 +1,5 @@
 # coding: utf-8
-
+# 流利的建造者 模式
 
 class Pizza:
 

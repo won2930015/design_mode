@@ -1,3 +1,5 @@
+# 状态机::模块:state_machine
+
 from state_machine import State, Event, acts_as_state_machine, after, before, InvalidStateTransition
 
 

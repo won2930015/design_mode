@@ -3,7 +3,7 @@
 
 def bfs(graph, start, end):  # 广度搜索算法.
     path = []
-    visited = [start]
+    visited = [start]  # 已访问
     while visited:
         current = visited.pop(0)
         if current not in path:

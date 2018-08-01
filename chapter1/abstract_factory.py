@@ -6,7 +6,7 @@ class Frog:
     def __str__(self):
         return self.name
 
-    def interact_with(self, obstacle):
+    def interact_with(self, obstacle):  # 相互作用(动作)
         print('{} the Frog encounters {} and {}!'.format(self,
                                                          obstacle, obstacle.action()))
 
@@ -29,10 +29,10 @@ class FrogWorld:
     def __str__(self):
         return '\n\n\t------ Frog World ———'
 
-    def make_character(self):
+    def make_character(self):  # 创建主角
         return Frog(self.player_name)
 
-    def make_obstacle(self):
+    def make_obstacle(self):  # 创建障碍
         return Bug()
 
 
@@ -96,7 +96,7 @@ def validate_age(name):
 
 def main():
     name = input("Hello. What's your name? ")
-    valid_input = False
+    valid_input = False  # 有效输入
     while not valid_input:
         valid_input, age = validate_age(name)
     game = FrogWorld if age < 18 else WizardWorld
