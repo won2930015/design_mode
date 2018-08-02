@@ -8,7 +8,7 @@ import functools
 def memoize(fn):
     known = dict()
 
-    @functools.wraps(fn)
+    @functools.wraps(fn)  # 封装原函数信息.
     def memoizer(*args):
         if args not in known:
             known[args] = fn(*args)
