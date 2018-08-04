@@ -17,7 +17,7 @@ class Tree:
             obj.tree_type = tree_type
         return obj
 
-    def render(self, age, x, y):
+    def render(self, age, x, y):  # 渲染
         print('render a tree of type {} and age {} at ({}, {})'.format(self.tree_type, age, x, y))
 
 
